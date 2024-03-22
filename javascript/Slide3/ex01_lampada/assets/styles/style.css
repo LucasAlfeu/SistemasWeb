@@ -1,0 +1,39 @@
+*{
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+#text{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.box{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#bulb{
+    margin-bottom: 2rem;
+}
+#btn{
+    background-color: #005eff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: .25rem;
+}
+#btn:hover{
+    background-color: #1F46E0;
+    cursor: pointer;
+    transition: .4s;
+}
