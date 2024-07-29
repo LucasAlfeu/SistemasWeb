@@ -1,0 +1,18 @@
+<html>
+    <body>
+        Nome: <input type="text" id="iptNome">
+        <br>
+        <button id="btnEnviar" onclick="adicionar()">Enviar</button>
+        <br>
+        <select id="slcNome">
+
+        </select>
+        <script>
+            function adicionar(){            
+                let txt = document.getElementById("iptNome")
+                let select = document.getElementById("slcNome")
+                select.innerHTML = `<option>${txt.value}</option> <br>`
+            }
+        </script>
+    </body>
+</html>

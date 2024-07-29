@@ -1,0 +1,50 @@
+<html>
+    <body>
+        <input type="checkbox" value="Maça" class="frutas"> Maçã <br>
+        <input type="checkbox" value="Uva" class="frutas"> Uva <br>
+        <input type="checkbox" value="Banana" class="frutas"> Banana <br>
+        <input type="checkbox" value="Caja" class="frutas"> Caja <br>
+        <input type="checkbox" name="outra" value="" class="frutas"> Outra 
+        <input type="text" id="txtFrutas">
+
+        <input type="button" value="Enviar" onclick="listarFrutas()">
+
+        <script>
+            let lista = document.getElementsByClassName("frutas")
+            let other = document.getElementById("txtFrutas")
+
+            function listarFrutas(){    
+                let n = lista.length
+                let validar = validaForm(n)
+
+                if(validar){
+                    console.log("Lista de Fruta:")
+                    for(i=0; i<n; i++){
+                        if(lista[i].checked){
+                            if(lista[i].name == "outra" && other.value.length > 2){
+                                console.log(other.value)
+                            }
+                            console.log(lista[i].value)
+                        }
+                    }
+                } else {
+                    console.log("Numero Insuficente de itens")
+                }
+            }
+
+            function validaForm(num){
+                count = 0
+                for(i=0; i<num; i++){
+                    if(lista[i].checked){
+                        count += 1
+                    }
+                }
+                if(count>= 2){
+                    return true
+                } else {
+                    return false
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html> Indica documento tipo html
+<html> Tag html para colocarmos todo nosso html dentro dela
+<body> corpo do nosso documento onde de fato colocamos os elementos gráficos
+<p>This is a p element</p>
+<p>This is also a p element.</p>
+<p>this is also a p element - Click the button to change the background color of all p elements in this document.</p> 
+<button onclick="myFunction()">Try it</button>
+<script>
+    function myFunction(){
+        var myNodeList = document.getElementsByTagName("p");
+        var i;
+        for(i=0; i<myNodeList.length; i++){
+            myNodeList[i].style.backgroundColor = "red";
+        }
+    }
+</script>   
+</body>
+</html>

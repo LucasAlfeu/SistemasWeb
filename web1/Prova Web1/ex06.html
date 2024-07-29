@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <input type="text" id="input1"><br>
+        <input type="text" id="input2"><br>
+        <input type="button" id="btn" value="verificar" onclick="verificar(document.getElementById('input1').value, document.getElementById('input2').value)">
+
+        <script>
+            function verificar(txt1, txt2){
+                let verifica1 = palindromo(txt1)
+                let verifica2 = palindromo(txt2)
+
+                if (verifica1 && verifica2){
+                    console.log("True")
+                    return true
+                } else {
+                    console.log("False")
+                    return false
+                }
+
+            }
+
+            function palindromo(palavra){
+                let n = palavra.length
+                let count = 0
+                for(i=0; i<(n); i++){
+                    if(palavra[i] == palavra[n-i-1]){
+                        count += 1
+                    }
+                }
+                if(count == n){
+                    return true
+                } else {
+                    false
+                }
+            }
+        </script>
+    </body>
+</html>
