@@ -1,40 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Páginda de Login</title>
+<title>Páginda do usuario</title>
 </head>
 <body>
-	<%! 
-		String validUsuario = "lucas" ;
-		String validSenha = "12345" ;
-		boolean logado = false;
+	<h1>Página do Usuário</h1>
+	<% 
+		String user = (String) session.getAttribute("usuario");
+		boolean logado = (boolean) session.getAttribute("logado");
 	%>
 	
-	<h1> Páginda de Login</h1>
-	<form action="Login.jsp" method="POST">
-		<label>Usuário:</label></br>
-		<input type="text" name="user">
-		</br>
-		<label>Senha:</label></br>
-		<input type="password" name="pass">
-		</br>
-		<input type="submit">
+	<p>Bem vindo <%= user %> </p>
+	<p>Você está <%= logado %> </p>
+	
+	<form action="logout.do" method="POST">
+		<input type="submit" value="Sair" name="sair">
 	</form>
-	
-	<%
-		String usuario = request.getParameter("user");
-		String senha = request.getParameter("pass");
-		
-		if(usuario != null && senha != null){
-			if(usuario.equals(validUsuario) && senha.equals(validSenha)){
-				
-			}
-		} else {
-			
-		}
-	%>
 </body>
 </html>
+
