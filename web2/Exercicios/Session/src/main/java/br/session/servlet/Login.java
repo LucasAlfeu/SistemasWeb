@@ -52,9 +52,8 @@ public class Login extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		if(user.equals(usuarioValido) && password.equals(senhaValida)) {
-
-			u.getUsuario();
-			session.setAttribute("Usuario", u.getUsuario());
+			session.setAttribute("user", u);
+			response.sendRedirect("http://localhost:8080/Session/pagina.jsp");
 		} else {
 			//String url = "http://localhost:8080/Session/index.html";
 			//response.sendRedirect(url);

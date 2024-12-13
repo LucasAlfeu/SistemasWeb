@@ -142,7 +142,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="ConfigurandoAmbinete" path="/ConfigurandoAmbinete" reloadable="true" source="org.eclipse.jst.jee.server:ConfigurandoAmbinete"/><Context docBase="ValoresMultiplos" path="/ValoresMultiplos" reloadable="true" source="org.eclipse.jst.jee.server:ValoresMultiplos"/><Context docBase="Session" path="/Session" reloadable="true" source="org.eclipse.jst.jee.server:Session"/><Context docBase="Mapa" path="/Mapa" reloadable="true" source="org.eclipse.jst.jee.server:Mapa"/><Context docBase="LoginJsp" path="/LoginJsp" reloadable="true" source="org.eclipse.jst.jee.server:LoginJsp"/><Context docBase="AtividadeLoginJsp" path="/AtividadeLoginJsp" reloadable="true" source="org.eclipse.jst.jee.server:AtividadeLoginJsp"/></Host>
+      <Context docBase="Sistema-de-Matricula" path="/Sistema-de-Matricula" reloadable="true" source="org.eclipse.jst.jee.server:Sistema-de-Matricula"/><Context docBase="Sistema-de-Carona" path="/Sistema-de-Carona" reloadable="true" source="org.eclipse.jst.jee.server:Sistema-de-Carona"/><Context docBase="Sistemas" path="/Sistemas" reloadable="true" source="org.eclipse.jst.jee.server:Sistemas"/></Host>
     </Engine>
   </Service>
 </Server>

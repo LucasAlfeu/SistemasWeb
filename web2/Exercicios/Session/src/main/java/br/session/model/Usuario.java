@@ -12,4 +12,17 @@ public class Usuario {
 	public String getUsuario() {
 		return this.usuario;
 	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+	
 }
