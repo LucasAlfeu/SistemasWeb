@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>POST com AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="FormController">
+
+    <h2>Formulário</h2>
+    <form ng-submit="enviarDados()">
+        <label>Nome:</label>
+        <input type="text" ng-model="usuario.nome" required><br><br>
+        
+        <label>Email:</label>
+        <input type="email" ng-model="usuario.email" required><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p ng-if="mensagem">{{mensagem}}</p>
+
+    <script>
+        var app = angular.module('app', []);
+
+        app.controller('FormController', function($scope, $http) {
+            $scope.usuario = {};
+            $scope.enviarDados = function() {
+                $http.post('https://jsonplaceholder.typicode.com/posts', $scope.usuario)
+                    .then(function(response) {
+                        console.log('Resposta:', response.data);
+                        $scope.mensagem = "Dados enviados com sucesso!";
+                    }, function(erro) {
+                        $scope.mensagem = "Erro ao enviar os dados.";
+                    });
+            };
+        });
+    </script>
+
+</body>
+</html>

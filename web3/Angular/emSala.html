@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular</title>
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+    <!-- <div ng-app="">
+        <p>Input something in the input box:</p>
+        <p>Name: <input type="text" ng-model="name"></p>
+        <p ng-bind="name"></p>
+    </div> -->
+
+    <!-- <div ng-app="" ng-init="nome='Franca'">
+        <p >O nome é <span ng-bind="nome"></span></p>
+    </div> -->
+
+    <!-- <div ng-app="">
+        <p> Minhas primeira expressão: {{5+5}}</p>
+    </div> -->
+
+    <!-- <div ng-app="" >
+        <p>Name: <input type="text" ng-model="name"></p>
+        <p>{{name}}</p>
+    </div> -->
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        First Name: <input type="text" ng-model="firstName"><br>
+        Last Name: <input type="text" ng-model="lastName"><br>
+        <br>
+        Full Name: {{firstName + " " + lastName}}
+    </div>
+    <script>
+        var app = angular.module('myApp', []); //definição da aplicação(módulo)
+        app.controller('myCtrl', function($scope) { //controloe da aplicação
+            $scope.firstName= "John"; //variváveis começam com estesvalores
+            $scope.lastName= "Doe";
+        });
+    </script> -->
+
+    <!-- <div ng-app="" ng-init="myCol='red'">
+        <input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+    </div> -->
+
+    <div ng-app="app" ng-controller="controlador">
+        <h1>Mensagem:{{msg}}</h1>
+        </div>
+    <script>
+        var app = angular.module('app', []);
+            app.controller('controlador', function($scope, $http) {
+            $http.get("nome.txt").then(function(response) {
+            $scope.msg = response.data;
+            });
+        });
+    </script>
+</body>
+</html>

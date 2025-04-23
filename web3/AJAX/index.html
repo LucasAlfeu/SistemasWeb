@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo de POST com XMLHttpRequest</title>
+</head>
+<body>
+  <h2>Cadastro de Aluno</h2>
+  <form id="formAluno">
+    <label for="fname">Nome:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+
+    <label for="lname">Sobrenome:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p id="resposta"></p>
+
+  <script>
+    document.getElementById("formAluno").addEventListener("submit", function(e) {
+      e.preventDefault(); // Impede o envio tradicional do formulário
+
+      // Captura os dados do formulário
+      const fname = document.getElementById("fname").value;
+      const lname = document.getElementById("lname").value;
+
+      // Cria o objeto para a requisição
+      const xmlhttp = new XMLHttpRequest();
+
+      // Define o que fazer quando a resposta chegar
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+          document.getElementById("resposta").innerText = "Servidor respondeu: " + xmlhttp.responseText;
+        }
+      };
+
+      // Abre a conexão (método POST, destino, assíncrona)
+      xmlhttp.open("POST", "ajax.txt", true);
+
+      // Define o tipo de conteúdo
+      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      // Prepara os dados para envio
+      const dados = `fname=${encodeURIComponent(fname)}&lname=${encodeURIComponent(lname)}`;
+
+      // Envia os dados
+      xmlhttp.send(dados);
+    });
+  </script>
+</body>
+</html>

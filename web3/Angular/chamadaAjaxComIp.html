@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX com AngulasJS</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+</head>
+<body>
+    <div ng-app="app" ng-controller="controlador">
+        <h1>Mensagem: {{msg}}</h1>
+    </div>
+    <script>
+        var app = angular.module('app',[])
+        app.controller('controlador', function($scope, $http){
+            $http.get('IP da máquina:porta/nome.txt').then(function(response){ //Como não tinha ninguém para fazer precisei improvisar, mas como demosntrado na ultima aula basta colcoar o ip e a porta
+                $scope.msg = response.data
+            }, function(erro){
+                $scope.msg = "Erro ao pegar dados"
+            })
+        })
+    </script>
+</body>
+</html>
